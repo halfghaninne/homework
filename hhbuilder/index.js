@@ -19,19 +19,19 @@ window.onload = function() {
     if (errorCheck()) {
       addFamilyMember();
     } else {
-      if (!document.getElementById("error")) {
+      if (!errorIsShown()) {
         errorReport();
       }
     };
   };
 
+  function errorIsShown(){
+    return document.getElementById("error");
+  }
+
   // Validation logic for a family member's age.
   function errorCheck() {
-    if (/^\d+$/.test(inputs["age"].value) && (parseInt(inputs["age"].value) > 0)) {
-      return true;
-    } else {
-      return false;
-    };
+    return (/^\d+$/.test(inputs["age"].value) && (parseInt(inputs["age"].value) > 0))
   };
 
   // Outputs error messages to the user. Right now it is hardcoded for age validation, but it could be formatted to take an argument (like the name of the input field where the error occurred) for more dynamic reporting
@@ -46,8 +46,8 @@ window.onload = function() {
 
   // Clears error messages from the form.
   function clearError() {
-    if (document.getElementById("error")) {
-      var errorMsg = document.getElementById("error");
+    if (errorIsShown()) {
+      var errorMsg = errorIsShown();
       errorMsg.parentNode.removeChild(errorMsg);
     };
   };

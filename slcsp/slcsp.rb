@@ -44,8 +44,7 @@ end
 def fill_csv_data(path_to_zips_file, path_to_plans_file, path_to_slcsp_file)
   csv_data = [["zipcode","rate"]]
   CSV.foreach(path_to_slcsp_file, headers:true) do |row|
-    if find_rate_area(row["zipcode"], path_to_zips_file)
-      rate_area = find_rate_area(row["zipcode"], path_to_zips_file)
+    if rate_area = find_rate_area(row["zipcode"], path_to_zips_file)
       silver_plans = find_silver_plans_for_area(rate_area, path_to_plans_file)
       csv_data << [row["zipcode"], find_slcp(silver_plans)]
     else
@@ -71,4 +70,4 @@ def driver(path_to_zips_file, path_to_plans_file, path_to_slcsp_file)
   write_result(csv_data, path_to_slcsp_file)
 end
 
-driver("./zips.csv", "./plans.csv", "./slcsp.csv")
+driver("./zips.csv", "./plans.csv", "./testslcsp.csv")
