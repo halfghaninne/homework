@@ -14,8 +14,6 @@ window.onload = function() {
   addButton.addEventListener("click", processInfo);
   submitButton.addEventListener("click", submitInfo);
 
-  // NOTE TO SELF: Add EventListener on form to clear error reporting (if it exists) anytime the form is clicked? Or maybe a when the cursor is in the input field?
-
   // Driver of the program; adds the family member to the household if certain conditions are met, or reports an error back to the user if conditions are not met. 
   function processInfo() {
     if (errorCheck()) {
