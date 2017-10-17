@@ -66,7 +66,6 @@ window.onload = function() {
 
   // Clears information from form. Only gets called in the 'good information' flow in the addFamilyMember() function.
   function clearForm() {
-    // NOTE TO SELF: might change where this gets called.
     clearError();
     inputs["age"].value = "";
     document.getElementsByTagName("SELECT")[0].value = "";
