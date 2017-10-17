@@ -1,0 +1,1 @@
+To run the program, in your Terminal/command line in the /slcsp directory, run `ruby slcsp.rb`. Once that command runs, check the contents of your slscp.csv file.
