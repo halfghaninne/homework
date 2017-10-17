@@ -1,1 +1,5 @@
-To run the program, in your Terminal/command line in the /slcsp directory, run `ruby slcsp.rb`. Once that command runs, check the contents of your slscp.csv file.
+Engineers, thank you for taking the time to review my homework.
+
+I worked on HHBuilder and SLCSP.
+
+To run the SLCSP program, in your Terminal/command line in the /slcsp directory, run `ruby slcsp.rb`. Once that command executes, check the contents of your slscp.csv file.
