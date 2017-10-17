@@ -21,7 +21,9 @@ window.onload = function() {
     if (errorCheck()) {
       addFamilyMember();
     } else {
-      errorReport();
+      if (!document.getElementById("error")) {
+        errorReport();
+      }
     };
   };
 
@@ -116,10 +118,19 @@ window.onload = function() {
     liToRemove.parentNode.removeChild(liToRemove);
   }
 
-  // Places serialized JSON of the household object into the <pre class="debug"> element in the DOM. In production, this would likely be placed by an AJAX request to the server. 
+
+  // Applies styles to the container meant to display JSON return
+  function applyStyles(container) {
+    container.style.width = "100vw";
+    container.style.overflow = "scroll";
+    container.style.wordWrap = "normal";
+    container.style.display = "block";
+  }
+
+  // Places serialized JSON of the household object into the <pre class="debug"> element in the DOM. In production, this would likely be placed by an AJAX request to the server.
   function submitInfo() {
     var container = document.getElementsByClassName("debug")[0];
     container.innerHTML = JSON.stringify(household);
-    container.style.display = "block";
+    applyStyles(container);
   }
 }
