@@ -27,7 +27,7 @@ window.onload = function() {
 
   // Validation logic for a family member's age.
   function errorCheck() {
-    if (parseInt(inputs["age"].value) != NaN && (parseInt(inputs["age"].value) > 0)) {
+    if (/^\d+$/.test(inputs["age"].value) && (parseInt(inputs["age"].value) > 0)) {
       return true;
     } else {
       return false;
